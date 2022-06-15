@@ -11,22 +11,29 @@
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
     {% for klanten in klant %}
-        {{ klanten.naam }}
+        <hr>
+        {{ klanten.naam }} <br>
         {{ klanten.adres }}
-        {{ klanten.postcode }}
-        {{ klanten.woonplaats }} <br>
+        {{ klanten.postcode }}<br>
+        {{ klanten.woonplaats }} <br><br>
+
         {%  for b in klanten.bestelling %}
-            {{ b.datum | date('d/m/Y') }}
-            <br>
-
+            <b>{{ b.datum | date('d/m/Y') }} {% if b.status == 1 %}
+                    <b>STATUS:</b><p>in behandeling</p>
+                {% else %}
+                    <b>STATUS:</b><p>done</p>
+                {% endif %}</b>
             {%  for br in b.bestelregel %}
-                {{ br.pizza.naam}}
-                {{ br.aantal }}
-                <br>
+                <p>{{ br.pizza.naam}} ({{ br.aantal }}x)</p>
             {% endfor %}
-
         {% endfor %}
     {% endfor %}
 
+    <h1>CATS</h1>
+    {% for category in categorys %}
+        {{ category.naam }}
+        {{ category.image }}<br>
+    {% endfor %}
+    <a href="/form">Category toevoegen</a>
 </div>
 {% endblock %}

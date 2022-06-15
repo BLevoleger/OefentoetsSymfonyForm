@@ -4,7 +4,6 @@
 
 return [
     'app_base' => [[], ['_controller' => 'App\\Controller\\BaseController::index'], [], [['text', '/']], [], [], []],
-    'success' => [[], ['_controller' => 'App\\Controller\\BaseController::success'], [], [['text', '/success']], [], [], []],
     'app_form' => [[], ['_controller' => 'App\\Controller\\BaseController::form'], [], [['text', '/form']], [], [], []],
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], [], []],
     '_wdt' => [['token'], ['_controller' => 'web_profiler.controller.profiler::toolbarAction'], [], [['variable', '/', '[^/]++', 'token', true], ['text', '/_wdt']], [], [], []],

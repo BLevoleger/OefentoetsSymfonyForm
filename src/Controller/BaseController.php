@@ -21,6 +21,7 @@ class BaseController extends AbstractController
     public function index(EntityManagerInterface $em): Response
     {
         $klanten = $em->getRepository(Klant::class)->findAll();
+        $categorys = $em->getRepository(Category::class)->findAll();
 
 
 
@@ -28,19 +29,12 @@ class BaseController extends AbstractController
         return $this->render('base/index.html.twig', [
             'controller_name' => 'BaseController',
             'klant' => $klanten,
+            'categorys' => $categorys,
         ]);
 
 
     }
-    /**
-     * @Route("/success", name="success")
-     */
-    public function success(): Response
-    {
-        return new Response('SUCCESSS');
 
-
-    }
     /**
      * @Route("/form", name="app_form")
      */
@@ -51,7 +45,7 @@ class BaseController extends AbstractController
         $form = $this->createFormBuilder($category)
             ->add('naam', TextType::class)
             ->add('image', TextType::class)
-            ->add('save', SubmitType::class, ['label' => 'Create Task'])
+            ->add('save', SubmitType::class, ['label' => 'Add Category'])
 
             ->getForm();
 
@@ -65,7 +59,7 @@ class BaseController extends AbstractController
             $category = $form->getData();
             $categoryRepository->add($category);
 
-            return $this->redirectToRoute('success');
+            return $this->redirectToRoute('app_base');
 
         }
 

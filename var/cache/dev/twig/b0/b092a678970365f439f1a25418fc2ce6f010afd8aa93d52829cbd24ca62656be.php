@@ -101,66 +101,95 @@ class __TwigTemplate_97750353b543b330eb3cc7d6bf73e853a1092bfe8903ee2c8e0f6fdea68
         $context['_seq'] = twig_ensure_traversable((isset($context["klant"]) || array_key_exists("klant", $context) ? $context["klant"] : (function () { throw new RuntimeError('Variable "klant" does not exist.', 13, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["klanten"]) {
             // line 14
-            echo "        ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["klanten"], "naam", [], "any", false, false, false, 14), "html", null, true);
-            echo "
+            echo "        <hr>
         ";
             // line 15
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["klanten"], "adres", [], "any", false, false, false, 15), "html", null, true);
-            echo "
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["klanten"], "naam", [], "any", false, false, false, 15), "html", null, true);
+            echo " <br>
         ";
             // line 16
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["klanten"], "postcode", [], "any", false, false, false, 16), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["klanten"], "adres", [], "any", false, false, false, 16), "html", null, true);
             echo "
         ";
             // line 17
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["klanten"], "woonplaats", [], "any", false, false, false, 17), "html", null, true);
-            echo " <br>
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["klanten"], "postcode", [], "any", false, false, false, 17), "html", null, true);
+            echo "<br>
         ";
             // line 18
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["klanten"], "bestelling", [], "any", false, false, false, 18));
-            foreach ($context['_seq'] as $context["_key"] => $context["b"]) {
-                // line 19
-                echo "            ";
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["b"], "datum", [], "any", false, false, false, 19), "d/m/Y"), "html", null, true);
-                echo "
-            <br>
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["klanten"], "woonplaats", [], "any", false, false, false, 18), "html", null, true);
+            echo " <br><br>
 
-            ";
-                // line 22
-                $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["b"], "bestelregel", [], "any", false, false, false, 22));
-                foreach ($context['_seq'] as $context["_key"] => $context["br"]) {
-                    // line 23
-                    echo "                ";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["br"], "pizza", [], "any", false, false, false, 23), "naam", [], "any", false, false, false, 23), "html", null, true);
-                    echo "
+        ";
+            // line 20
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["klanten"], "bestelling", [], "any", false, false, false, 20));
+            foreach ($context['_seq'] as $context["_key"] => $context["b"]) {
+                // line 21
+                echo "            <b>";
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["b"], "datum", [], "any", false, false, false, 21), "d/m/Y"), "html", null, true);
+                echo " ";
+                if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["b"], "status", [], "any", false, false, false, 21), 1))) {
+                    // line 22
+                    echo "                    <b>STATUS:</b><p>in behandeling</p>
                 ";
+                } else {
                     // line 24
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["br"], "aantal", [], "any", false, false, false, 24), "html", null, true);
-                    echo "
-                <br>
+                    echo "                    <b>STATUS:</b><p>done</p>
+                ";
+                }
+                // line 25
+                echo "</b>
+            ";
+                // line 26
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["b"], "bestelregel", [], "any", false, false, false, 26));
+                foreach ($context['_seq'] as $context["_key"] => $context["br"]) {
+                    // line 27
+                    echo "                <p>";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["br"], "pizza", [], "any", false, false, false, 27), "naam", [], "any", false, false, false, 27), "html", null, true);
+                    echo " (";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["br"], "aantal", [], "any", false, false, false, 27), "html", null, true);
+                    echo "x)</p>
             ";
                 }
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['br'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 27
-                echo "
-        ";
+                // line 29
+                echo "        ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['b'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 29
+            // line 30
             echo "    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['klanten'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
+        // line 31
         echo "
+    <h1>CATS</h1>
+    ";
+        // line 33
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["categorys"]) || array_key_exists("categorys", $context) ? $context["categorys"] : (function () { throw new RuntimeError('Variable "categorys" does not exist.', 33, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
+            // line 34
+            echo "        ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "naam", [], "any", false, false, false, 34), "html", null, true);
+            echo "
+        ";
+            // line 35
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "image", [], "any", false, false, false, 35), "html", null, true);
+            echo "<br>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 37
+        echo "    <a href=\"/form\">Category toevoegen</a>
 </div>
 ";
         
@@ -183,7 +212,7 @@ class __TwigTemplate_97750353b543b330eb3cc7d6bf73e853a1092bfe8903ee2c8e0f6fdea68
 
     public function getDebugInfo()
     {
-        return array (  163 => 30,  157 => 29,  150 => 27,  141 => 24,  136 => 23,  132 => 22,  125 => 19,  121 => 18,  117 => 17,  113 => 16,  109 => 15,  104 => 14,  100 => 13,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  192 => 37,  184 => 35,  179 => 34,  175 => 33,  171 => 31,  165 => 30,  159 => 29,  148 => 27,  144 => 26,  141 => 25,  137 => 24,  133 => 22,  128 => 21,  124 => 20,  119 => 18,  115 => 17,  111 => 16,  107 => 15,  104 => 14,  100 => 13,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -201,23 +230,30 @@ class __TwigTemplate_97750353b543b330eb3cc7d6bf73e853a1092bfe8903ee2c8e0f6fdea68
 <div class=\"example-wrapper\">
     <h1>Hello {{ controller_name }}! ✅</h1>
     {% for klanten in klant %}
-        {{ klanten.naam }}
+        <hr>
+        {{ klanten.naam }} <br>
         {{ klanten.adres }}
-        {{ klanten.postcode }}
-        {{ klanten.woonplaats }} <br>
+        {{ klanten.postcode }}<br>
+        {{ klanten.woonplaats }} <br><br>
+
         {%  for b in klanten.bestelling %}
-            {{ b.datum | date('d/m/Y') }}
-            <br>
-
+            <b>{{ b.datum | date('d/m/Y') }} {% if b.status == 1 %}
+                    <b>STATUS:</b><p>in behandeling</p>
+                {% else %}
+                    <b>STATUS:</b><p>done</p>
+                {% endif %}</b>
             {%  for br in b.bestelregel %}
-                {{ br.pizza.naam}}
-                {{ br.aantal }}
-                <br>
+                <p>{{ br.pizza.naam}} ({{ br.aantal }}x)</p>
             {% endfor %}
-
         {% endfor %}
     {% endfor %}
 
+    <h1>CATS</h1>
+    {% for category in categorys %}
+        {{ category.naam }}
+        {{ category.image }}<br>
+    {% endfor %}
+    <a href=\"/form\">Category toevoegen</a>
 </div>
 {% endblock %}
 ", "base/index.html.twig", "C:\\Users\\SD Student\\Desktop\\OefentoetsSymfonyForm\\templates\\base\\index.html.twig");
