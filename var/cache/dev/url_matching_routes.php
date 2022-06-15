@@ -9,7 +9,8 @@ return [
     false, // $matchHost
     [ // $staticRoutes
         '/' => [[['_route' => 'app_base', '_controller' => 'App\\Controller\\BaseController::index'], null, null, null, false, false, null]],
-        '/order' => [[['_route' => 'app_order', '_controller' => 'App\\Controller\\BaseController::order'], null, null, null, false, false, null]],
+        '/success' => [[['_route' => 'success', '_controller' => 'App\\Controller\\BaseController::success'], null, null, null, false, false, null]],
+        '/form' => [[['_route' => 'app_form', '_controller' => 'App\\Controller\\BaseController::form'], null, null, null, false, false, null]],
         '/_profiler' => [[['_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'], null, null, null, true, false, null]],
         '/_profiler/search' => [[['_route' => '_profiler_search', '_controller' => 'web_profiler.controller.profiler::searchAction'], null, null, null, false, false, null]],
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],

@@ -10,12 +10,12 @@
 
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
-
-        {{ klant.naam }}
-        {{ klant.adres }}
-        {{ klant.postcode }}
-        {{ klant.woonplaats }} <br>
-        {%  for b in klant.bestelling %}
+    {% for klanten in klant %}
+        {{ klanten.naam }}
+        {{ klanten.adres }}
+        {{ klanten.postcode }}
+        {{ klanten.woonplaats }} <br>
+        {%  for b in klanten.bestelling %}
             {{ b.datum | date('d/m/Y') }}
             <br>
 
@@ -26,6 +26,7 @@
             {% endfor %}
 
         {% endfor %}
+    {% endfor %}
 
 </div>
 {% endblock %}

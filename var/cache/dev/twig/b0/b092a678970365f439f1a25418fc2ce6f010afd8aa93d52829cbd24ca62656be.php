@@ -95,61 +95,71 @@ class __TwigTemplate_97750353b543b330eb3cc7d6bf73e853a1092bfe8903ee2c8e0f6fdea68
         // line 12
         echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
         echo "! ✅</h1>
-
-        ";
-        // line 14
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["klant"]) || array_key_exists("klant", $context) ? $context["klant"] : (function () { throw new RuntimeError('Variable "klant" does not exist.', 14, $this->source); })()), "naam", [], "any", false, false, false, 14), "html", null, true);
-        echo "
-        ";
-        // line 15
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["klant"]) || array_key_exists("klant", $context) ? $context["klant"] : (function () { throw new RuntimeError('Variable "klant" does not exist.', 15, $this->source); })()), "adres", [], "any", false, false, false, 15), "html", null, true);
-        echo "
-        ";
-        // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["klant"]) || array_key_exists("klant", $context) ? $context["klant"] : (function () { throw new RuntimeError('Variable "klant" does not exist.', 16, $this->source); })()), "postcode", [], "any", false, false, false, 16), "html", null, true);
-        echo "
-        ";
-        // line 17
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["klant"]) || array_key_exists("klant", $context) ? $context["klant"] : (function () { throw new RuntimeError('Variable "klant" does not exist.', 17, $this->source); })()), "woonplaats", [], "any", false, false, false, 17), "html", null, true);
-        echo " <br>
-        ";
-        // line 18
+    ";
+        // line 13
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["klant"]) || array_key_exists("klant", $context) ? $context["klant"] : (function () { throw new RuntimeError('Variable "klant" does not exist.', 18, $this->source); })()), "bestelling", [], "any", false, false, false, 18));
-        foreach ($context['_seq'] as $context["_key"] => $context["b"]) {
-            // line 19
-            echo "            ";
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["b"], "datum", [], "any", false, false, false, 19), "d/m/Y"), "html", null, true);
+        $context['_seq'] = twig_ensure_traversable((isset($context["klant"]) || array_key_exists("klant", $context) ? $context["klant"] : (function () { throw new RuntimeError('Variable "klant" does not exist.', 13, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["klanten"]) {
+            // line 14
+            echo "        ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["klanten"], "naam", [], "any", false, false, false, 14), "html", null, true);
             echo "
+        ";
+            // line 15
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["klanten"], "adres", [], "any", false, false, false, 15), "html", null, true);
+            echo "
+        ";
+            // line 16
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["klanten"], "postcode", [], "any", false, false, false, 16), "html", null, true);
+            echo "
+        ";
+            // line 17
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["klanten"], "woonplaats", [], "any", false, false, false, 17), "html", null, true);
+            echo " <br>
+        ";
+            // line 18
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["klanten"], "bestelling", [], "any", false, false, false, 18));
+            foreach ($context['_seq'] as $context["_key"] => $context["b"]) {
+                // line 19
+                echo "            ";
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["b"], "datum", [], "any", false, false, false, 19), "d/m/Y"), "html", null, true);
+                echo "
             <br>
 
             ";
-            // line 22
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["b"], "bestelregel", [], "any", false, false, false, 22));
-            foreach ($context['_seq'] as $context["_key"] => $context["br"]) {
-                // line 23
-                echo "                ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["br"], "pizza", [], "any", false, false, false, 23), "naam", [], "any", false, false, false, 23), "html", null, true);
-                echo "
+                // line 22
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["b"], "bestelregel", [], "any", false, false, false, 22));
+                foreach ($context['_seq'] as $context["_key"] => $context["br"]) {
+                    // line 23
+                    echo "                ";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["br"], "pizza", [], "any", false, false, false, 23), "naam", [], "any", false, false, false, 23), "html", null, true);
+                    echo "
                 ";
-                // line 24
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["br"], "aantal", [], "any", false, false, false, 24), "html", null, true);
-                echo "
+                    // line 24
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["br"], "aantal", [], "any", false, false, false, 24), "html", null, true);
+                    echo "
                 <br>
             ";
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['br'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 27
+                echo "
+        ";
             }
             $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['br'], $context['_parent'], $context['loop']);
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['b'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 27
-            echo "
-        ";
+            // line 29
+            echo "    ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['b'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['klanten'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 29
+        // line 30
         echo "
 </div>
 ";
@@ -173,7 +183,7 @@ class __TwigTemplate_97750353b543b330eb3cc7d6bf73e853a1092bfe8903ee2c8e0f6fdea68
 
     public function getDebugInfo()
     {
-        return array (  153 => 29,  146 => 27,  137 => 24,  132 => 23,  128 => 22,  121 => 19,  117 => 18,  113 => 17,  109 => 16,  105 => 15,  101 => 14,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  163 => 30,  157 => 29,  150 => 27,  141 => 24,  136 => 23,  132 => 22,  125 => 19,  121 => 18,  117 => 17,  113 => 16,  109 => 15,  104 => 14,  100 => 13,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -190,12 +200,12 @@ class __TwigTemplate_97750353b543b330eb3cc7d6bf73e853a1092bfe8903ee2c8e0f6fdea68
 
 <div class=\"example-wrapper\">
     <h1>Hello {{ controller_name }}! ✅</h1>
-
-        {{ klant.naam }}
-        {{ klant.adres }}
-        {{ klant.postcode }}
-        {{ klant.woonplaats }} <br>
-        {%  for b in klant.bestelling %}
+    {% for klanten in klant %}
+        {{ klanten.naam }}
+        {{ klanten.adres }}
+        {{ klanten.postcode }}
+        {{ klanten.woonplaats }} <br>
+        {%  for b in klanten.bestelling %}
             {{ b.datum | date('d/m/Y') }}
             <br>
 
@@ -206,9 +216,10 @@ class __TwigTemplate_97750353b543b330eb3cc7d6bf73e853a1092bfe8903ee2c8e0f6fdea68
             {% endfor %}
 
         {% endfor %}
+    {% endfor %}
 
 </div>
 {% endblock %}
-", "base/index.html.twig", "C:\\Users\\SD Student\\Desktop\\oefentoets\\templates\\base\\index.html.twig");
+", "base/index.html.twig", "C:\\Users\\SD Student\\Desktop\\OefentoetsSymfonyForm\\templates\\base\\index.html.twig");
     }
 }

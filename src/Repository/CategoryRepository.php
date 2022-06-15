@@ -21,7 +21,7 @@ class CategoryRepository extends ServiceEntityRepository
         parent::__construct($registry, Category::class);
     }
 
-    public function add(Category $entity, bool $flush = false): void
+    public function add(Category $entity, bool $flush = true): void
     {
         $this->getEntityManager()->persist($entity);
 

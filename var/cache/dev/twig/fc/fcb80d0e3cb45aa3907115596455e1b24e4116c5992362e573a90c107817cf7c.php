@@ -194,6 +194,6 @@ class __TwigTemplate_b2c5de41934fe725d3b10db5f4bc9697564bdd2cb7815d153be74f51e42
         {% block body %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "C:\\Users\\SD Student\\Desktop\\oefentoets\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\SD Student\\Desktop\\OefentoetsSymfonyForm\\templates\\base.html.twig");
     }
 }
